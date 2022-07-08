@@ -55,6 +55,8 @@ export class CreateSpecificationCars1657291665213 implements MigrationInterface 
         await queryRunner.dropForeignKey(
             "specifications_cars", "FKSpecificationCar"
         )
+
+        await queryRunner.dropTable("specifications_cars")
     }
 
 }
