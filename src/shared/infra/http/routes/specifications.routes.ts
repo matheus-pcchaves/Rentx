@@ -9,6 +9,6 @@ const specificationRoutes = Router()
 
 const createSpecificationController = new CreateSpecificationController
 
-specificationRoutes.post("/", ensureAuthenticated, ensureAdmin, createSpecificationController.handle)
+specificationRoutes.post("/", ensureAuthenticated, createSpecificationController.handle)
 
 export { specificationRoutes }
