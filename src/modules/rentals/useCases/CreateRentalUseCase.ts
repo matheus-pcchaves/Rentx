@@ -12,7 +12,6 @@ interface IRequest{
     expected_return_date: Date
 }
 
-
 @injectable()
 class CreateRentalUseCase {
 
