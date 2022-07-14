@@ -4,8 +4,8 @@ import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 import { AppError } from "@shared/errors/AppError";
 
-import { Rental } from "../infra/typeorm/entities/Rental";
-import { IRentalsRepository } from "../repositories/IRentalsRepository";
+import { Rental } from "../../infra/typeorm/entities/Rental";
+import { IRentalsRepository } from "../../repositories/IRentalsRepository";
 
 interface IRequest{
     user_id: string;
