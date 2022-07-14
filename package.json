@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register --poll --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli ",
-    "test": "jest",
+    "test": "cross-env NODE_ENV=test jest",
     "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
   },
   "dependencies": {
+    "@types/supertest": "^2.0.12",
     "bcryptjs": "^2.4.3",
+    "crossover": "^0.9.0",
     "csv-parse": "4.15.3",
     "dayjs": "^1.11.3",
     "express": "^4.18.1",
@@ -34,10 +36,10 @@
     "@types/jest": "26.0.21",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/multer": "^1.4.7",
-    "@types/supertest": "^2.0.12",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
+    "cross-env": "^7.0.3",
     "eslint": "^8.17.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
