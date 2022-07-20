@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@types/supertest": "^2.0.12",
+    "aws-sdk": "^2.1179.0",
     "bcryptjs": "^2.4.3",
     "crossover": "^0.9.0",
     "csv-parse": "4.15.3",

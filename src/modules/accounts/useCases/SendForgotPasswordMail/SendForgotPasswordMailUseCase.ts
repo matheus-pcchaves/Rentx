@@ -1,6 +1,6 @@
+import { resolve } from "path"
 import { inject, injectable } from "tsyringe";
 import { v4 as uuidV4 } from "uuid"
-import { resolve } from "path"
 
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 import { IUsersTokensRepository } from "@modules/accounts/repositories/IUsersTokensRepository";

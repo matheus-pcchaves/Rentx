@@ -8,7 +8,7 @@ import createConnection from "@shared/infra/typeorm"
 
 let connection: Connection
 
-describe("Create category controller", async () => {
+describe("Create category controller", () => {
 
     beforeAll(async () => {
         connection = await createConnection()
@@ -35,13 +35,13 @@ describe("Create category controller", async () => {
             password: "admin"
         })
         
-        const { token } = responseToken.body
+        const { refresh_token } = responseToken.body
 
         const response = await request(app).post("/categories").send({
             name: "Category supertest",
             description: "Category supertest"
         }).set({
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${refresh_token }`
         })
 
         expect(response.status).toBe(201)
@@ -53,13 +53,13 @@ describe("Create category controller", async () => {
             password: "admin"
         })
         
-        const { token } = await responseToken.body
+        const { refresh_token  } = await responseToken.body
 
         const response = await request(app).post("/categories").send({
             name: "Category supertest",
             description: "Category supertest"
         }).set({
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${refresh_token }`
         })
 
         expect(response.status).toBe(400)
