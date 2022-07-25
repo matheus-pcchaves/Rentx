@@ -17,10 +17,6 @@ import { ISpecificationsRepository } from "@modules/cars/repositories/ISpecifica
 import { RentalsRepository } from "@modules/rentals/infra/typeorm/repositories/RentalsRepository"
 import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository"
 
-import { LocalStorageProvider } from "./providers/StorageProvider/implementations/LocalStorageProvider"
-import { IStorageProvider } from "./providers/StorageProvider/IStorageProvider"
-import { S3StorageProvider } from "./providers/StorageProvider/implementations/S3StorageProvider"
-
 container.registerSingleton< ICategoriesRepository >(
     "CategoriesRepository",
     CategoriesRepository
@@ -54,14 +50,4 @@ container.registerSingleton<IRentalsRepository>(
 container.registerSingleton<IUsersTokensRepository>(
     "UsersTokensRepository",
     UsersTokensRepository
-)
-
-const diskStorage = {
-    local: LocalStorageProvider,
-    s3: S3StorageProvider
-}
-
-container.registerSingleton<IStorageProvider>(
-    "StorageProvider",
-    diskStorage[process.env.disk]
 )
