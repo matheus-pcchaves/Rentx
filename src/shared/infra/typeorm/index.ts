@@ -11,4 +11,5 @@ export default async(): Promise<Connection> => {
           : defaultOptions.database 
     })
   )
+  
 } 
